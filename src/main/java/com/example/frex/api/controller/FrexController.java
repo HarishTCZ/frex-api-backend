@@ -13,4 +13,9 @@ public class FrexController {
     public ResponseEntity sayHello() {
         return new ResponseEntity<>("hello", HttpStatus.OK);
     }
+
+    @GetMapping("/heyy")
+    public ResponseEntity sayHey() {
+        return new ResponseEntity<>("heyyy", HttpStatus.OK);
+    }
 }
