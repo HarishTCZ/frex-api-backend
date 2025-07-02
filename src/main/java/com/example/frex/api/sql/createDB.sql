@@ -10,4 +10,15 @@ CREATE TABLE frex
 );
 ALTER TABLE frex owner to postgres;
 
+
+--product table
+CREATE TABLE products
+(
+    id bigint PRIMARY KEY ,
+    productname text,
+    price int,
+    category text
+
+);
+ALTER TABLE products owner to postgres;
 -- Figure out how to connect it to local postgres
