@@ -3,22 +3,16 @@ CREATE SCHEMA public;
 GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO public;
 
-CREATE TABLE frex
-(
-    id bigint PRIMARY KEY,
-    name TEXT NOT NULL
+CREATE TABLE frex (
+                      id BIGINT PRIMARY KEY,
+                      name TEXT NOT NULL
 );
-ALTER TABLE frex owner to postgres;
+ALTER TABLE frex OWNER TO postgres;
 
-
---product table
-CREATE TABLE products
-(
-    id bigint PRIMARY KEY ,
-    productname text,
-    price int,
-    category text
-
+CREATE TABLE products (
+                          id BIGINT PRIMARY KEY,
+                          product_name TEXT,
+                          price INT,
+                          category TEXT
 );
-ALTER TABLE products owner to postgres;
--- Figure out how to connect it to local postgres
+ALTER TABLE products OWNER TO postgres;

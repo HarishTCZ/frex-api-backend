@@ -1,6 +1,7 @@
 package com.example.frex.api.controller;
 
 import com.example.frex.api.DAO.FrexDAO;
+import com.example.frex.api.DAO.JooqDAO;
 import com.example.frex.api.service.FrexService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,5 +26,8 @@ public class FrexController {
         return new ResponseEntity<>(frexService.getAll(), HttpStatus.OK);
     }
 
-    //System.out.println("hai");
+    @GetMapping("/getAllId")
+    public ResponseEntity projectId() {
+        return new ResponseEntity<>(frexService.getAllId(), HttpStatus.OK);
+    }
 }
