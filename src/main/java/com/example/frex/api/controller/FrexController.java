@@ -1,4 +1,4 @@
-package controller;
+package com.example.frex.api.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
