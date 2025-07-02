@@ -18,4 +18,6 @@ public class FrexController {
     public ResponseEntity sayHey() {
         return new ResponseEntity<>("heyyy", HttpStatus.OK);
     }
+
+    //System.out.println("hai");
 }
