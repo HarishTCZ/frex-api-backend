@@ -1,4 +1,4 @@
-name: Auto Merge dev to master
+name: Auto PR from dev to master
 
 on:
   push:
@@ -6,27 +6,17 @@ on:
       - dev
 
 jobs:
-  auto-merge:
+  create-pr:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Merge dev into master
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Fetch all branches
-          git fetch origin master
-
-          # Checkout master
-          git checkout master
-
-          # Merge dev into master
-          git merge origin/dev -m "Auto-merge dev into master"
-
-          # Push changes to master
-          git push origin master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Pull Request from dev to master
+        uses: peter-evans/pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          source: dev
+          target: master
+          title: "Sync: dev → master"
+          body: |
+            This PR was auto-generated to sync changes from dev to master.
+          draft: false
