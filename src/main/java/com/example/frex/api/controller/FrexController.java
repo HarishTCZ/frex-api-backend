@@ -1,5 +1,8 @@
 package com.example.frex.api.controller;
 
+import com.example.frex.api.DAO.FrexDAO;
+import com.example.frex.api.service.FrexService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,14 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class FrexController {
+    @Autowired
+    private FrexService frexService;
+
     @GetMapping("/hello")
     public ResponseEntity sayHello() {
         return new ResponseEntity<>("hello", HttpStatus.OK);
     }
 
-    @GetMapping("/heyy")
+    @GetMapping("/getAll")
     public ResponseEntity sayHey() {
-        return new ResponseEntity<>("heyyy", HttpStatus.OK);
+        return new ResponseEntity<>(frexService.getAll(), HttpStatus.OK);
     }
 
     //System.out.println("hai");
