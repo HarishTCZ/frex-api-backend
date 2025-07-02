@@ -1,6 +1,6 @@
-package DAO;
+package com.example.frex.api.DAO;
 
-import model.FrexModel;
+import com.example.frex.api.model.FrexModel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
