@@ -6,23 +6,17 @@ on:
       - dev
 
 jobs:
-  create-pr-dev-to-master:
+  create-pr:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout dev branch
-        uses: actions/checkout@v4
-        with:
-          ref: dev
-
-      - name: Create Pull Request to master
-        uses: peter-evans/create-pull-request@v5
+      - name: Create Pull Request from dev to master
+        uses: peter-evans/pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: Auto PR from dev to master"
+          source: dev
+          target: master
           title: "Sync: dev → master"
           body: |
             This PR was auto-generated to sync changes from dev to master.
-          base: master
-          branch: dev
           draft: false
