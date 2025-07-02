@@ -18,5 +18,5 @@ jobs:
           target: master
           title: "Sync: dev → master"
           body: |
-            This PR was auto-generated to sync changes from dev to master.
+            This PR was automatically created to sync changes from `dev` into `master`.
           draft: false
