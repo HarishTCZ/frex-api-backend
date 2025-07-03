@@ -26,6 +26,6 @@ public class FrexController {
 
     @GetMapping("/getAllId")
     public ResponseEntity projectId() {
-        return new ResponseEntity<>(frexService.getAllId(), HttpStatus.OK);
+        return new ResponseEntity<>("welcome", HttpStatus.OK);
     }
 }
