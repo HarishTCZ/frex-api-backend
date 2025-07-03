@@ -5,6 +5,8 @@ import com.example.frex.api.model.ProductModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductServices {
 
@@ -13,6 +15,14 @@ public class ProductServices {
 
     public ProductModel addProduct(ProductModel productModel) {
         return productRepository.save(productModel);
+    }
+
+    public void deleteProduct(Long id) {
+        productRepository.deleteById(id);
+    }
+
+    public List<ProductModel> findAllProduct() {
+        return productRepository.findAll();
     }
 
 }
