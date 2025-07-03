@@ -8,7 +8,7 @@ public class ProductModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String productname;
+    private String product_name;
     private int price;
     private String category;
 
@@ -21,11 +21,11 @@ public class ProductModel {
     }
 
     public void setProductname(String productname) {
-        this.productname = productname;
+        this.product_name = product_name;
     }
 
     public String getProductname() {
-        return productname;
+        return product_name;
     }
 
     public void setPrice(int price) {

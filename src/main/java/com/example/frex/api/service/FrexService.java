@@ -19,5 +19,4 @@ public class FrexService {
         return frexDAO.findAll();
     }
 
-
 }

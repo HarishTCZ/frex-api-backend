@@ -22,6 +22,7 @@ public class ProductServices {
     }
 
     public List<ProductModel> findAllProduct() {
+        List<ProductModel> productModels = productRepository.findAll();
         return productRepository.findAll();
     }
 
